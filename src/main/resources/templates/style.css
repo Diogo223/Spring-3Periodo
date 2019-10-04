@@ -1,0 +1,37 @@
+form{
+	margin-left: 40%;
+}
+#se{
+	width: 400px
+}
+#no{
+	width: 400px
+}
+#cont{
+	background-color: lightblue;
+	width: 400px;
+	border-radius: 25px
+}
+#bt{
+	margin-left: 40%;
+}
+#dt{
+	border-radius: 25px;
+	margin-left: 10px
+}
+#tx{
+	color: blue;
+	margin-left: 20%;
+
+}
+label{
+	margin-left: 10%;
+	color:blue;	
+}
+a{
+	color: white
+}
+a:hover{
+	color: white;
+	text-decoration: none;
+}

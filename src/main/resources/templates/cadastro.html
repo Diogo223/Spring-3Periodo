@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<head>
+ <meta charset="UTF-8">
+  <title>cadastro</title>
+ <style type="text/css">
+ form{
+	
+}
+#se{
+	width: 400px
+}
+#no{
+	width: 400px;
+	
+}
+#cont{
+	background-color: lightblue;
+	width: 400px;
+	border-radius: 25px;
+	margin-left: 40%
+}
+#bt{
+	margin-left: 40%;
+}
+#dt{
+	border-radius: 25px;
+	
+}
+#tx{
+	color: blue;
+	margin-left: 20%
+
+}
+label{
+	margin-left: 10%;
+	color:blue;	
+}
+#tabel{
+margin-left: 40%;
+background-color: lightblue;
+}
+a{
+	color: white
+}
+a:hover{
+	color: white;
+	text-decoration: none;
+}
+ </style>
+ 
+</head>
+<body>
+<a href="/index" class="btn btn-primary" id="cad">Voltar</a>
+  <div id="cont">
+<h1 id="tx">CADASTRO</h1><br>
+
+
+	<form  method="POST">
+  <label >Nome</label>  
+  <div>
+  <input name="textinput" type="text" placeholder="Nome" class="form-control input-md"  id="no">
+    
+  </div>
+  <label>Data</label>  
+  <div>
+  <input type="date" id="dt">
+    
+  </div>
+
+
+<!-- Select Basic -->
+ 
+  <label>Intervalo</label>
+  <div>
+    <select class="form-control form-control-lg" id="se">
+    <option>Selecione</option>
+
+      <option value="1">manhã</option>
+      <option value="2">almoço</option>
+      <option value="3">tarde</option>
+    </select>
+</div><br>
+ 
+  <div>
+    <input type="submit" class="btn btn-primary" id="bt"></input>
+</div>
+
+
+</form>
+</div>
+    <br>
+  <table border="1" id="tabel">
+  <tr>
+  <td>Nome</td>
+  <td>Data</td>
+  <td>Intervalo</td>
+  <td> Excluir </td>
+  <td> Editar</td>
+  </tr>
+   <tr th:each="p : ${professor}">
+  		<td th:text=${p.nome}></td>
+  		<td th:text="${p.descricao}"></td>  
+  		<td th:text="${p.intervalo}"></td> 	
+  		<td><a class="btn btn-outline-danger" th:href="@{/delete/{id}(id=${p.id})}">Excluir</a></td>	
+  		<td><a class="btn btn-primary" th:href="@{/editar/{id}(id=${p.id})}">Editar</a></td>
+  	</tr>
+  </table>
+ 
+
+</body>
+</html>
